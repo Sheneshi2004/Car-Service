@@ -1,4 +1,4 @@
-package com.carservice.controller;
+package com.carservice.controller; //pacakge name servet clss is located.
 
 import com.carservice.service.ReviewService;
 import com.carservice.model.Review;

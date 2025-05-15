@@ -1,4 +1,4 @@
-package com.carservice.controller;
+package com.carservice.controller; //pacakge name servet clss is located.
 
 import com.carservice.service.ReviewService;
 import com.carservice.model.Review;
@@ -10,7 +10,7 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 
 public class ReviewServlet extends HttpServlet {
-    private ReviewService reviewService;
+    private ReviewService reviewService;//Attributes
 
     @Override
     public void init() throws ServletException {

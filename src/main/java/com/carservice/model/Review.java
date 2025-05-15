@@ -1,4 +1,4 @@
-package com.carservice.model;
+package com.carservice.model;// pacage name and class located
 
 public class Review {
     private int reviewId;

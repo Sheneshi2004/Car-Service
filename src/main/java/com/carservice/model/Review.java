@@ -8,7 +8,7 @@ public class Review {
     private int rating;
 
     public Review(int reviewId, String username, String serviceName, String comment, int rating) {
-        this.reviewId = reviewId;
+        this.reviewId = reviewId; //keyword refers to the current instance 
         this.username = username;
         this.serviceName = serviceName;
         this.comment = comment;

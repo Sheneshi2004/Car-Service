@@ -1,7 +1,7 @@
-package com.carservice.model;
+package com.carservice.model;// pacage name and class located
 
 public class Review {
-    private int reviewId;
+    private int reviewId;//public class nemed review
     private String username;
     private String serviceName;
     private String comment;

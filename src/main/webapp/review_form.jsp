@@ -1,5 +1,14 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="com.carservice.model.User" %>
+<%@ page import="com.carservice.model.Service" %>
+<%@ page import="java.util.List" %>
+<%
+    User user = (User) session.getAttribute("user");
+    if (user == null) {
+        response.sendRedirect("login.jsp");
+        return;
+    }
+%>
 <html>
 <head>
     <title>Car Service Tracker - Write Review</title>
@@ -273,7 +282,6 @@
             <a href="booking_form.jsp">Book Service</a>
         </div>
         <a href="login.jsp">Logout</a>
-        <% User user = (User) session.getAttribute("user"); %>
         <% if (user != null) { %>
         <div class="user-info">
             <i class="fas fa-user"></i>
@@ -289,15 +297,24 @@
         </div>
 
         <form class="review-form" action="review" method="post">
+            <input type="hidden" name="action" value="submit">
+            <input type="hidden" name="username" value="<%= user.getUsername() %>">
             <div class="form-group">
-                <label for="serviceType">Service Type</label>
-                <select id="serviceType" name="serviceType" required>
+                <label for="serviceName">Service Type</label>
+                <select id="serviceName" name="serviceName" required>
                     <option value="">Select a service</option>
-                    <option value="oil_change">Oil Change</option>
-                    <option value="tire_rotation">Tire Rotation</option>
-                    <option value="brake_service">Brake Service</option>
-                    <option value="engine_tune">Engine Tune-up</option>
-                    <option value="transmission">Transmission Service</option>
+                    <% 
+                    List<Service> services = (List<Service>) request.getAttribute("services");
+                    if (services != null && !services.isEmpty()) {
+                        for (Service service : services) {
+                    %>
+                        <option value="<%= service.getName() %>"><%= service.getName() %> - <%= service.getCategory() %></option>
+                    <% 
+                        }
+                    } else {
+                    %>
+                        <option value="" disabled>No services available</option>
+                    <% } %>
                 </select>
             </div>
 
@@ -320,8 +337,8 @@
             </div>
 
             <div class="form-group">
-                <label for="review">Your Review</label>
-                <textarea id="review" name="review" required placeholder="Share your experience with our service..."></textarea>
+                <label for="comment">Your Review</label>
+                <textarea id="comment" name="comment" required placeholder="Share your experience with our service..."></textarea>
             </div>
 
             <button type="submit" class="submit-btn">Submit Review</button>

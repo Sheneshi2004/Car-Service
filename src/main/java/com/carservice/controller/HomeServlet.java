@@ -38,7 +38,7 @@ public class HomeServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //request from client and response to client
         System.out.println("HomeServlet doGet: Called");
-        List<Review> topReviews = new ArrayList<>();
+        List<Review> topReviews = new ArrayList<>();//Empty list to store top reviews
         String errorMsg = null;
 
         try {

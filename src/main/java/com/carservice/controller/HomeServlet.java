@@ -1,7 +1,7 @@
 package com.carservice.controller;
 
-import com.carservice.service.ReviewService;
-import com.carservice.model.Review;
+import com.carservice.service.ReviewService;//Handles review related operations
+import com.carservice.model.Review;//model class for reviews
 import com.carservice.model.User; // For session check if needed for personalized content later
 
 import jakarta.servlet.ServletException;

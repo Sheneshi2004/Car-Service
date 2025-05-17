@@ -12,12 +12,12 @@ public class EmployeeService {
     private static final String EMPLOYEE_FILE = "employee.txt"; //Constant employee data file name
     private static final String DATA_DIR = "/WEB-INF/data/"; //Directory where data files are stored
     private final ServletContext servletContext; //Web application context
-    private final RecordService recordService; //Service for handling records 
+    private final RecordService recordService; //Service for handling records
 
     public EmployeeService(ServletContext servletContext) throws IOException {
         this.servletContext = servletContext;
         this.recordService = new RecordService(servletContext);
-        createFileIfNotExist(EMPLOYEE_FILE);
+        createFileIfNotExist(EMPLOYEE_FILE); //To ensure employee file exists when service is created
     }
 
     public void createFileIfNotExist(String fileName) throws IOException {

@@ -12,6 +12,7 @@ public class ServiceRecordLinkedList {
         ServiceRecord data;
         Node next;
 
+        //Constructor to create a new node with given data
         Node(ServiceRecord data) {
             this.data = data;
             this.next = null;

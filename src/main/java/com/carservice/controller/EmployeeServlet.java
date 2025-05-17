@@ -17,7 +17,7 @@ public class EmployeeServlet extends HttpServlet {
     @Override
     public void init() throws ServletException {
         try {
-            
+            //new EmployeeService object with ServletContext
             employeeService = new EmployeeService(getServletContext());
         } catch (IOException e) {
             throw new ServletException("Failed to initialize EmployeeService", e);

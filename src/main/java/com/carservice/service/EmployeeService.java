@@ -6,7 +6,7 @@ import com.carservice.model.Records;
 import jakarta.servlet.ServletContext; //For web application context
 import java.io.*; //For file operations
 import java.util.ArrayList; //for dynamic lists
-import java.util.List;
+import java.util.List; //for list interface
 
 public class EmployeeService {
     private static final String EMPLOYEE_FILE = "employee.txt";

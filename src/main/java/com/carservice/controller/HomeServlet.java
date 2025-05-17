@@ -19,6 +19,7 @@ import java.util.List;
 import java.util.stream.Collectors;//For stream operations
 
 @WebServlet(name = "HomeServlet", urlPatterns = {"/", "/home", "/index"}) // Map to root, /home, and /index
+//inherits all basic servlet functions from HttpServlet
 public class HomeServlet extends HttpServlet {
     private ReviewService reviewService; // hasdh
 

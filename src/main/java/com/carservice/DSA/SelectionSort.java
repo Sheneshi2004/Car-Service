@@ -36,7 +36,7 @@ public class SelectionSort {
     // Helper method to compare dates
     private static int compareDates(String date1, String date2) {
         try {
-            Date d1 = dateFormat.parse(date1);
+            Date d1 = dateFormat.parse(date1); //converts string to date object
             Date d2 = dateFormat.parse(date2);
             return d1.compareTo(d2);
         } catch (ParseException e) {

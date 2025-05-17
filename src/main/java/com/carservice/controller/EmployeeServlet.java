@@ -1,13 +1,13 @@
 package com.carservice.controller;
 
-import com.carservice.service.EmployeeService;
-import com.carservice.model.Employee;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.util.List;
+import com.carservice.service.EmployeeService; //For employee operations
+import com.carservice.model.Employee; //Employee model class
+import jakarta.servlet.ServletException; //servlet errors
+import jakarta.servlet.http.HttpServlet; //Base servlet class
+import jakarta.servlet.http.HttpServletRequest; //To handle HTTP requests
+import jakarta.servlet.http.HttpServletResponse; //To handle HTTP responses
+import java.io.IOException; //For I/O operations
+import java.util.List;//To store employee lists
 
 //class declaration-extends HttpServlet to create EmployeeServlet
 public class EmployeeServlet extends HttpServlet {

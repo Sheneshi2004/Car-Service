@@ -9,6 +9,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
+//class declaration-extends HttpServlet to create EmployeeServlet
 public class EmployeeServlet extends HttpServlet {
     private EmployeeService employeeService;
 

@@ -7,8 +7,8 @@ import com.carservice.model.User; // For session check if needed for personalize
 import jakarta.servlet.ServletException;//To handle servlet specific errors
 import jakarta.servlet.http.HttpServlet;//Base class for HttpServlet
 import jakarta.servlet.http.HttpServletRequest;//To represent client requests
-import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
+import jakarta.servlet.http.HttpServletResponse;//To represent server's response
+import jakarta.servlet.http.HttpSession;//Manages user sessions
 import jakarta.servlet.annotation.WebServlet;
 
 import java.io.IOException;

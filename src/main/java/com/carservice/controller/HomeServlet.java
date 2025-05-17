@@ -1,29 +1,30 @@
 package com.carservice.controller;
 
-import com.carservice.service.ReviewService;
-import com.carservice.model.Review;
+import com.carservice.service.ReviewService;//Handles review related operations
+import com.carservice.model.Review;//model class for reviews
 import com.carservice.model.User; // For session check if needed for personalized content later
 
-import jakarta.servlet.ServletException;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
-import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.ServletException;//To handle servlet specific errors
+import jakarta.servlet.http.HttpServlet;//Base class for HttpServlet
+import jakarta.servlet.http.HttpServletRequest;//To represent client requests
+import jakarta.servlet.http.HttpServletResponse;//To represent server's response
+import jakarta.servlet.http.HttpSession;//Manages user sessions
+import jakarta.servlet.annotation.WebServlet;//To configure servlets
 
-import java.io.IOException;
+import java.io.IOException;//To handle input output errors
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
+import java.util.Comparator;//For sorting reviews
 import java.util.List;
-import java.util.stream.Collectors;
+import java.util.stream.Collectors;//For stream operations
 
 @WebServlet(name = "HomeServlet", urlPatterns = {"/", "/home", "/index"}) // Map to root, /home, and /index
+//inherits all basic servlet functions from HttpServlet
 public class HomeServlet extends HttpServlet {
     private ReviewService reviewService; // hasdh
 
     @Override
-    public void init() throws ServletException {
+    public void init() throws ServletException {  //init() - called once when servlet is created
         try {
             reviewService = new ReviewService(getServletContext());
         } catch (IOException e) {
@@ -31,14 +32,17 @@ public class HomeServlet extends HttpServlet {
         }
     }
 
+
+    //Handles get requests
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        //request from client and response to client
         System.out.println("HomeServlet doGet: Called");
-        List<Review> topReviews = new ArrayList<>();
+        List<Review> topReviews = new ArrayList<>();//Empty list to store top reviews
         String errorMsg = null;
 
         try {
-            List<Review> allReviews = reviewService.getAllReviews();
+            List<Review> allReviews = reviewService.getAllReviews();  //Fetch all reviews from the database
             System.out.println("HomeServlet doGet: Fetched " + (allReviews != null ? allReviews.size() : "null") + " total reviews.");
 
             if (allReviews != null && !allReviews.isEmpty()) {
@@ -58,10 +62,10 @@ public class HomeServlet extends HttpServlet {
             }
 
         } catch (IOException e) {
-            e.printStackTrace();
+            e.printStackTrace(); //print full stack error to the console
             errorMsg = "Error loading reviews: " + e.getMessage();
-            System.err.println("HomeServlet doGet: IOException while getting reviews: " + e.getMessage());
-        } catch (Exception e) {
+            System.err.println("HomeServlet doGet: IOException while getting reviews: " + e.getMessage()); //log to error stream
+        } catch (Exception e) { //all other types of exceptions
             e.printStackTrace();
             errorMsg = "An unexpected error occurred while preparing the home page: " + e.getMessage();
             System.err.println("HomeServlet doGet: Unexpected exception: " + e.getMessage());
@@ -70,7 +74,7 @@ public class HomeServlet extends HttpServlet {
         if (errorMsg != null) {
             request.setAttribute("homePageError", errorMsg); // Use a specific error attribute for this page
         }
-        request.setAttribute("topReviews", topReviews);
+        request.setAttribute("topReviews", topReviews); //sets list of top reviews for JSP to use
         
         //HttpSession session = request.getSession(false);
         //if (session != null && session.getAttribute("user") != null) {
@@ -80,5 +84,6 @@ public class HomeServlet extends HttpServlet {
 
         System.out.println("HomeServlet doGet: Forwarding to /index.jsp");
         request.getRequestDispatcher("/index.jsp").forward(request, response);
+        //forwarding request to index.jsp which will display the data
     }
 } 

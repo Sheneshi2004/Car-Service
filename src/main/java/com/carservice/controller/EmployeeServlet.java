@@ -20,13 +20,16 @@ public class EmployeeServlet extends HttpServlet {
             //new EmployeeService object with ServletContext
             employeeService = new EmployeeService(getServletContext());
         } catch (IOException e) {
-            //convert IO Exception to ServletException 
+            //convert IO Exception to ServletException
             throw new ServletException("Failed to initialize EmployeeService", e);
         }
     }
 
+    //To handle HTTP get requests
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        //Get list of all employees from service
         List<Employee> employees = employeeService.getAllEmployees();
+        
         request.setAttribute("employees", employees);
         request.getRequestDispatcher("manage_employees.jsp").forward(request, response);
     }

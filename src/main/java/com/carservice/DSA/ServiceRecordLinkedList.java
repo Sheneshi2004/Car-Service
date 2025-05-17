@@ -46,8 +46,9 @@ public class ServiceRecordLinkedList {
             return false;
         }
 
+        //record to remove is at head
         if (head.data.getRecordNo() == recordNo) {
-            head = head.next;
+            head = head.next; //move head to next node
             size--;
             return true;
         }

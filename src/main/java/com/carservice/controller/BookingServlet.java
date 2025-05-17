@@ -19,7 +19,7 @@ public class BookingServlet extends HttpServlet {
     private RecordService recordService;
 
     @Override
-    public void init() throws ServletException {
+    public void init() throws ServletException {//Add service setup in servlet init method
         try {
             bookingService = new BookingService(getServletContext());
             recordService = new RecordService(getServletContext());

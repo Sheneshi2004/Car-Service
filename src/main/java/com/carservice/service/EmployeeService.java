@@ -5,7 +5,7 @@ import com.carservice.model.Employee;
 import com.carservice.model.Records;
 import jakarta.servlet.ServletContext; //For web application context
 import java.io.*; //For file operations
-import java.util.ArrayList;
+import java.util.ArrayList; //for dynamic lists
 import java.util.List;
 
 public class EmployeeService {

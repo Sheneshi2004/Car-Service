@@ -2,6 +2,7 @@ package com.carservice.DSA;
 
 import com.carservice.model.ServiceRecord;
 
+//singly linked list data structure
 public class ServiceRecordLinkedList {
     private Node head;
     private int size;

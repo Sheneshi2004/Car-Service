@@ -21,6 +21,11 @@ public class SelectionSort {
                 }
             }
 
+            //compare two dates and return:
+            //negative if 1st date is earlier
+            //positive if first date is later
+            //zero if the dates are equal
+
             // Swap the found minimum element with the first element
             ServiceRecord temp = records[minIdx];
             records[minIdx] = records[i];

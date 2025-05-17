@@ -2,6 +2,7 @@ package com.carservice.DSA;
 
 import com.carservice.model.ServiceRecord;
 
+//singly linked list data structure
 public class ServiceRecordLinkedList {
     private Node head;
     private int size;
@@ -11,13 +12,14 @@ public class ServiceRecordLinkedList {
         ServiceRecord data;
         Node next;
 
+        //Constructor to create a new node with given data
         Node(ServiceRecord data) {
             this.data = data;
             this.next = null;
         }
     }
 
-    // Constructor
+    // Constructor to initialize empty linked list
     public ServiceRecordLinkedList() {
         head = null;
         size = 0;
@@ -26,14 +28,14 @@ public class ServiceRecordLinkedList {
     // Add a record at the end of the list
     public void add(ServiceRecord record) {
         Node newNode = new Node(record);
-        if (head == null) {
+        if (head == null) { //list empty
             head = newNode;
         } else {
-            Node current = head;
+            Node current = head; //traverse to last node
             while (current.next != null) {
                 current = current.next;
             }
-            current.next = newNode;
+            current.next = newNode; //add the new node at end
         }
         size++;
     }
@@ -44,16 +46,18 @@ public class ServiceRecordLinkedList {
             return false;
         }
 
+        //record to remove is at head
         if (head.data.getRecordNo() == recordNo) {
-            head = head.next;
+            head = head.next; //move head to next node
             size--;
             return true;
         }
 
+        //search for node to remove
         Node current = head;
         while (current.next != null) {
-            if (current.next.data.getRecordNo() == recordNo) {
-                current.next = current.next.next;
+            if (current.next.data.getRecordNo() == recordNo) { //if found the node to remove
+                current.next = current.next.next; //skip node
                 size--;
                 return true;
             }
@@ -67,16 +71,16 @@ public class ServiceRecordLinkedList {
         Node current = head;
         while (current != null) {
             if (current.data.getRecordNo() == recordNo) {
-                return current.data;
+                return current.data; //return the found record
             }
             current = current.next;
         }
-        return null;
+        return null; //record not found
     }
 
     // Get all records as an array
-    public ServiceRecord[] getAllRecords() {
-        ServiceRecord[] records = new ServiceRecord[size];
+    public ServiceRecord[] getAllRecords() { //returns ServiceRecord array
+        ServiceRecord[] records = new ServiceRecord[size]; //new ServiceRecord array with linked list size
         Node current = head;
         int index = 0;
         while (current != null) {

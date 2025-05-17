@@ -49,6 +49,8 @@ public class EmployeeServlet extends HttpServlet {
             Employee employee = new Employee(employeeId, name, specialization);
             //Saving employee using service
             employeeService.saveEmployee(employee);
+
+            //Redirecting to admin dashboard after successful addition
             response.sendRedirect("admin_dashboard.jsp");
         }
     }

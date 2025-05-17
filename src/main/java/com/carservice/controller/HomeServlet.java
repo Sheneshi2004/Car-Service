@@ -24,7 +24,7 @@ public class HomeServlet extends HttpServlet {
     private ReviewService reviewService; // hasdh
 
     @Override
-    public void init() throws ServletException {
+    public void init() throws ServletException {  //init() - called once when servlet is created
         try {
             reviewService = new ReviewService(getServletContext());
         } catch (IOException e) {
@@ -32,8 +32,11 @@ public class HomeServlet extends HttpServlet {
         }
     }
 
+
+    //Handles get requests
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        //request from client and response to client
         System.out.println("HomeServlet doGet: Called");
         List<Review> topReviews = new ArrayList<>();
         String errorMsg = null;

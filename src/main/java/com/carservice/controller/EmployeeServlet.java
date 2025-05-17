@@ -37,6 +37,7 @@ public class EmployeeServlet extends HttpServlet {
 
     //To handle HTTP Post requests
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        //get action parameter from requests
         String action = request.getParameter("action");
         if ("add".equals(action)) {
             String employeeId = request.getParameter("employeeId");

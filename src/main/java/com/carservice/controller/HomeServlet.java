@@ -9,7 +9,7 @@ import jakarta.servlet.http.HttpServlet;//Base class for HttpServlet
 import jakarta.servlet.http.HttpServletRequest;//To represent client requests
 import jakarta.servlet.http.HttpServletResponse;//To represent server's response
 import jakarta.servlet.http.HttpSession;//Manages user sessions
-import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.annotation.WebServlet;//To configure servlets
 
 import java.io.IOException;
 import java.util.ArrayList;

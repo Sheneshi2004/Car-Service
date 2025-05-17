@@ -11,7 +11,7 @@ import java.util.List; //for list interface
 public class EmployeeService {
     private static final String EMPLOYEE_FILE = "employee.txt"; //Constant employee data file name
     private static final String DATA_DIR = "/WEB-INF/data/"; //Directory where data files are stored
-    private final ServletContext servletContext;
+    private final ServletContext servletContext; //Web application context
     private final RecordService recordService;
 
     public EmployeeService(ServletContext servletContext) throws IOException {

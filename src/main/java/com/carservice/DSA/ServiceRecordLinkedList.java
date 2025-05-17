@@ -28,14 +28,14 @@ public class ServiceRecordLinkedList {
     // Add a record at the end of the list
     public void add(ServiceRecord record) {
         Node newNode = new Node(record);
-        if (head == null) {
+        if (head == null) { //list empty
             head = newNode;
         } else {
-            Node current = head;
+            Node current = head; //traverse to last node
             while (current.next != null) {
                 current = current.next;
             }
-            current.next = newNode;
+            current.next = newNode; //add the new node at end
         }
         size++;
     }

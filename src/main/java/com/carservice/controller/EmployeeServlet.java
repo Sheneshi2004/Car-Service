@@ -40,6 +40,7 @@ public class EmployeeServlet extends HttpServlet {
         //get action parameter from requests
         String action = request.getParameter("action");
         if ("add".equals(action)) {
+            //Get employee details from request parameters
             String employeeId = request.getParameter("employeeId");
             String name = request.getParameter("name");
             String specialization = request.getParameter("specialization");

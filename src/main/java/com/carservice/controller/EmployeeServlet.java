@@ -13,9 +13,11 @@ import java.util.List;//To store employee lists
 public class EmployeeServlet extends HttpServlet {
     private EmployeeService employeeService;
 
+    //To handle servlet errors
     @Override
     public void init() throws ServletException {
         try {
+            
             employeeService = new EmployeeService(getServletContext());
         } catch (IOException e) {
             throw new ServletException("Failed to initialize EmployeeService", e);

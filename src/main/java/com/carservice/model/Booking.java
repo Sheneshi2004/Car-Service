@@ -4,7 +4,7 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class Booking { 
+public class Booking {
     private int bookingId;
     private String username;
     private String serviceName;

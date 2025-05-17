@@ -31,6 +31,7 @@ public class EmployeeServlet extends HttpServlet {
         List<Employee> employees = employeeService.getAllEmployees();
         //To store employee list in request attribute
         request.setAttribute("employees", employees);
+        //Forward the request list to manage_employees.jsp for displaying
         request.getRequestDispatcher("manage_employees.jsp").forward(request, response);
     }
 

@@ -53,10 +53,11 @@ public class ServiceRecordLinkedList {
             return true;
         }
 
+        //search for node to remove
         Node current = head;
         while (current.next != null) {
-            if (current.next.data.getRecordNo() == recordNo) {
-                current.next = current.next.next;
+            if (current.next.data.getRecordNo() == recordNo) { //if found the node to remove
+                current.next = current.next.next; //skip node
                 size--;
                 return true;
             }

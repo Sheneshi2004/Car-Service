@@ -47,7 +47,7 @@ public class SelectionSort {
 
     // Sort a ServiceRecordLinkedList by date
     public static void sortLinkedListByDate(ServiceRecordLinkedList list) {
-        ServiceRecord[] records = list.toArray();
+        ServiceRecord[] records = list.toArray(); //converting linked list to array for sorting
         sortByDate(records);
         
         // Clear the list and add sorted records back

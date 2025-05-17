@@ -9,7 +9,7 @@ public class SelectionSort {
     private static final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
     // Sort service records by date
-    public static void sortByDate(ServiceRecord[] records) {
+    public static void sortByDate(ServiceRecord[] records) { //parameter takes array of ServiceRecords
         int n = records.length;
 
         for (int i = 0; i < n - 1; i++) {

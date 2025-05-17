@@ -62,9 +62,9 @@ public class HomeServlet extends HttpServlet {
             }
 
         } catch (IOException e) {
-            e.printStackTrace();
+            e.printStackTrace(); //print full stack error to the console
             errorMsg = "Error loading reviews: " + e.getMessage();
-            System.err.println("HomeServlet doGet: IOException while getting reviews: " + e.getMessage());
+            System.err.println("HomeServlet doGet: IOException while getting reviews: " + e.getMessage()); //log to error stream
         } catch (Exception e) {
             e.printStackTrace();
             errorMsg = "An unexpected error occurred while preparing the home page: " + e.getMessage();

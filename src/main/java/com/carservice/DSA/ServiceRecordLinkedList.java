@@ -79,8 +79,8 @@ public class ServiceRecordLinkedList {
     }
 
     // Get all records as an array
-    public ServiceRecord[] getAllRecords() {
-        ServiceRecord[] records = new ServiceRecord[size];
+    public ServiceRecord[] getAllRecords() { //returns ServiceRecord array
+        ServiceRecord[] records = new ServiceRecord[size]; //new ServiceRecord array with linked list size
         Node current = head;
         int index = 0;
         while (current != null) {

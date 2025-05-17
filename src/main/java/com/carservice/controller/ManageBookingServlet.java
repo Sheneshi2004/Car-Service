@@ -13,7 +13,7 @@ public class ManageBookingServlet extends HttpServlet {
     private BookingService bookingService;
 
     @Override
-    public void init() throws ServletException {
+    public void init() throws ServletException { //Sets up BookingService with servlet context, throws ServletException on failure
         try {
             bookingService = new BookingService(getServletContext());
         } catch (IOException e) {

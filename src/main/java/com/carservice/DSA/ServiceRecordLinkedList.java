@@ -71,11 +71,11 @@ public class ServiceRecordLinkedList {
         Node current = head;
         while (current != null) {
             if (current.data.getRecordNo() == recordNo) {
-                return current.data;
+                return current.data; //return the found record
             }
             current = current.next;
         }
-        return null;
+        return null; //record not found
     }
 
     // Get all records as an array

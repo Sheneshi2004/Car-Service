@@ -11,7 +11,7 @@ import jakarta.servlet.http.HttpServletResponse;//To represent server's response
 import jakarta.servlet.http.HttpSession;//Manages user sessions
 import jakarta.servlet.annotation.WebServlet;//To configure servlets
 
-import java.io.IOException;
+import java.io.IOException;//To handle input output errors
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;

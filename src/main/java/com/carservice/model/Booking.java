@@ -4,7 +4,7 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class Booking {
+public class Booking { 
     private int bookingId;
     private String username;
     private String serviceName;
@@ -14,7 +14,7 @@ public class Booking {
     private String vehicleNumber;
     private String status;
 
-    public Booking(int bookingId, String username, String serviceName, String employeeId, String date, String time, String vehicleNumber, String status) {
+    public Booking(int bookingId, String username, String serviceName, String employeeId, String date, String time, String vehicleNumber, String status) { //parameterized constructor
         this.bookingId = bookingId;
         this.username = username;
         this.serviceName = serviceName;

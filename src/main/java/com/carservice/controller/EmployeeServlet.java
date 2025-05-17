@@ -35,6 +35,7 @@ public class EmployeeServlet extends HttpServlet {
         request.getRequestDispatcher("manage_employees.jsp").forward(request, response);
     }
 
+    //To handle HTTP Post requests
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
         if ("add".equals(action)) {

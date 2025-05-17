@@ -74,7 +74,7 @@ public class HomeServlet extends HttpServlet {
         if (errorMsg != null) {
             request.setAttribute("homePageError", errorMsg); // Use a specific error attribute for this page
         }
-        request.setAttribute("topReviews", topReviews);
+        request.setAttribute("topReviews", topReviews); //sets list of top reviews for JSP to use
         
         //HttpSession session = request.getSession(false);
         //if (session != null && session.getAttribute("user") != null) {
@@ -84,5 +84,6 @@ public class HomeServlet extends HttpServlet {
 
         System.out.println("HomeServlet doGet: Forwarding to /index.jsp");
         request.getRequestDispatcher("/index.jsp").forward(request, response);
+        //forwarding request to index.jsp which will display the data
     }
 } 

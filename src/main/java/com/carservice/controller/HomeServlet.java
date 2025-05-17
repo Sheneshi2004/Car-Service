@@ -4,9 +4,9 @@ import com.carservice.service.ReviewService;//Handles review related operations
 import com.carservice.model.Review;//model class for reviews
 import com.carservice.model.User; // For session check if needed for personalized content later
 
-import jakarta.servlet.ServletException;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.ServletException;//To handle servlet specific errors
+import jakarta.servlet.http.HttpServlet;//Base class for HttpServlet
+import jakarta.servlet.http.HttpServletRequest;//To represent client requests
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import jakarta.servlet.annotation.WebServlet;

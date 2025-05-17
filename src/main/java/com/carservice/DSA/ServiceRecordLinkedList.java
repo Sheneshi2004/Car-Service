@@ -19,7 +19,7 @@ public class ServiceRecordLinkedList {
         }
     }
 
-    // Constructor
+    // Constructor to initialize empty linked list
     public ServiceRecordLinkedList() {
         head = null;
         size = 0;

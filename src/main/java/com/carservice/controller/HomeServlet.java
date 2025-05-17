@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;//For sorting reviews
 import java.util.List;
-import java.util.stream.Collectors;
+import java.util.stream.Collectors;//For stream operations
 
 @WebServlet(name = "HomeServlet", urlPatterns = {"/", "/home", "/index"}) // Map to root, /home, and /index
 public class HomeServlet extends HttpServlet {

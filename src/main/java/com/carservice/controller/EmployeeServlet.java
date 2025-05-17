@@ -20,6 +20,7 @@ public class EmployeeServlet extends HttpServlet {
             //new EmployeeService object with ServletContext
             employeeService = new EmployeeService(getServletContext());
         } catch (IOException e) {
+            //convert IO Exception to ServletException 
             throw new ServletException("Failed to initialize EmployeeService", e);
         }
     }

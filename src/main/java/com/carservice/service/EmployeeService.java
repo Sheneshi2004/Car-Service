@@ -3,7 +3,7 @@ package com.carservice.service;
 //import statements
 import com.carservice.model.Employee;
 import com.carservice.model.Records;
-import jakarta.servlet.ServletContext;
+import jakarta.servlet.ServletContext; //For web application context
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;

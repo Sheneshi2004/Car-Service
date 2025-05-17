@@ -44,6 +44,8 @@ public class EmployeeServlet extends HttpServlet {
             String employeeId = request.getParameter("employeeId");
             String name = request.getParameter("name");
             String specialization = request.getParameter("specialization");
+
+            //New employee object with parameters
             Employee employee = new Employee(employeeId, name, specialization);
             employeeService.saveEmployee(employee);
             response.sendRedirect("admin_dashboard.jsp");

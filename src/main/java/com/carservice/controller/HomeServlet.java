@@ -42,7 +42,7 @@ public class HomeServlet extends HttpServlet {
         String errorMsg = null;
 
         try {
-            List<Review> allReviews = reviewService.getAllReviews();
+            List<Review> allReviews = reviewService.getAllReviews();  //Fetch all reviews from the database
             System.out.println("HomeServlet doGet: Fetched " + (allReviews != null ? allReviews.size() : "null") + " total reviews.");
 
             if (allReviews != null && !allReviews.isEmpty()) {

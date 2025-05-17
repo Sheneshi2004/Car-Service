@@ -9,7 +9,7 @@ import java.util.ArrayList; //for dynamic lists
 import java.util.List; //for list interface
 
 public class EmployeeService {
-    private static final String EMPLOYEE_FILE = "employee.txt";
+    private static final String EMPLOYEE_FILE = "employee.txt"; //Constant employee data file name
     private static final String DATA_DIR = "/WEB-INF/data/";
     private final ServletContext servletContext;
     private final RecordService recordService;

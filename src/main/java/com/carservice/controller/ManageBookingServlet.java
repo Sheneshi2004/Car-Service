@@ -32,4 +32,4 @@ public class ManageBookingServlet extends HttpServlet {
             response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Unable to load bookings.");
         }
     }
-} //Add doGet for booking management page
+}

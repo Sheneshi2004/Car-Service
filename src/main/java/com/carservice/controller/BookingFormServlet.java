@@ -14,7 +14,7 @@ import java.util.List;
 
 public class BookingFormServlet extends HttpServlet {
     private ServiceService serviceService;
-    private EmployeeService employeeService; //Add BookingFormServlet with services
+    private EmployeeService employeeService;
 
     @Override
     public void init() throws ServletException { 

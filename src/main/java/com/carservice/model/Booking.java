@@ -12,7 +12,7 @@ public class Booking {
     private String date;
     private String time;
     private String vehicleNumber;
-    private String status;
+    private String status; //Add class for booking data
 
     public Booking(int bookingId, String username, String serviceName, String employeeId, String date, String time, String vehicleNumber, String status) { //parameterized constructor
         this.bookingId = bookingId;

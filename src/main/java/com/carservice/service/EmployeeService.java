@@ -14,8 +14,8 @@ public class EmployeeService {
     private final ServletContext servletContext; //Web application context
     private final RecordService recordService; //Service for handling records
 
-    //constructor 
-    public EmployeeService(ServletContext servletContext) throws IOException {
+    //constructor
+    public EmployeeService(ServletContext servletContext) throws IOException { //To handle input output errors
         this.servletContext = servletContext;
         this.recordService = new RecordService(servletContext);
         createFileIfNotExist(EMPLOYEE_FILE); //To ensure employee file exists when service is created

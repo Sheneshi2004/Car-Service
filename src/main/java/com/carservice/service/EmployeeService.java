@@ -3,31 +3,32 @@ package com.carservice.service;
 //import statements
 import com.carservice.model.Employee;
 import com.carservice.model.Records;
-import jakarta.servlet.ServletContext;
-import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
+import jakarta.servlet.ServletContext; //For web application context
+import java.io.*; //For file operations
+import java.util.ArrayList; //for dynamic lists
+import java.util.List; //for list interface
 
 public class EmployeeService {
-    private static final String EMPLOYEE_FILE = "employee.txt";
-    private static final String DATA_DIR = "/WEB-INF/data/";
-    private final ServletContext servletContext;
-    private final RecordService recordService;
+    private static final String EMPLOYEE_FILE = "employee.txt"; //Constant employee data file name
+    private static final String DATA_DIR = "/WEB-INF/data/"; //Directory where data files are stored
+    private final ServletContext servletContext; //Web application context
+    private final RecordService recordService; //Service for handling records
 
-    public EmployeeService(ServletContext servletContext) throws IOException {
+    //constructor
+    public EmployeeService(ServletContext servletContext) throws IOException { //To handle input output errors
         this.servletContext = servletContext;
         this.recordService = new RecordService(servletContext);
-        createFileIfNotExist(EMPLOYEE_FILE);
+        createFileIfNotExist(EMPLOYEE_FILE); //To ensure employee file exists when service is created
     }
 
     public void createFileIfNotExist(String fileName) throws IOException {
-        String directoryPath = servletContext.getRealPath(DATA_DIR);
+        String directoryPath = servletContext.getRealPath(DATA_DIR);  //get actual file path for web application's data directory
         if (directoryPath != null) {
-            File dataDir = new File(directoryPath);
+            File dataDir = new File(directoryPath); //new file object representing data directory
             if (!dataDir.exists()) {
-                dataDir.mkdirs();
+                dataDir.mkdirs(); //if file not exist create it
             }
-            File file = new File(dataDir, fileName);
+            File file = new File(dataDir, fileName); //combines data directory with file name
             if (!file.exists()) {
                 file.createNewFile();
             }

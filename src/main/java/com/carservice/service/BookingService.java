@@ -42,7 +42,7 @@ public class BookingService {
             realPath = new File(fallbackDir, fileName).getPath();
         }
         return realPath;
-    } //Add getFilePath method
+    }
 
     public void saveRecord(String action, String description) throws IOException {
         recordService.saveRecord(new Records(recordService.generateRecordId(), action, description, 

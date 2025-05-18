@@ -5,7 +5,6 @@
 <%@ page import="java.util.ArrayList" %>
 <html>
 <head>
-<!--index-->
     <title>Car Service Tracker - Home</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -679,9 +678,10 @@
 <div class="navbar">
     <div class="nav-links">
         <a href="index.jsp">Home</a>
-        <a href="#services">Services</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#testimonials">Testimonials</a>
+        <a href="user_dashboard.jsp">Dashboard</a>
+        <a href="user_records.jsp">My Records</a>
+        <a href="booking_form.jsp">Book Service</a>
+        <a href="review?action=viewAll">Reviews</a>
         <% User user = (User) session.getAttribute("user"); %>
         <% if (user == null) { %>
         <a href="login.jsp">Login</a>

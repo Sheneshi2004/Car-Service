@@ -51,7 +51,7 @@ public class BookingServlet extends HttpServlet {
         String username = user.getUsername(); // Get username from User object
 
         if ("book".equals(action)) {
-            String serviceName = request.getParameter("serviceName");
+            String serviceName = request.getParameter("serviceName"); //Get Service Name
             String employeeId = request.getParameter("employeeId"); // Get employee ID
             String date = request.getParameter("date");
             String time = request.getParameter("time");

@@ -17,7 +17,7 @@ public class BookingFormServlet extends HttpServlet {
     private EmployeeService employeeService; //Add BookingFormServlet with services
 
     @Override
-    public void init() throws ServletException { //Set up services on servlet start
+    public void init() throws ServletException { 
         try {
             serviceService = new ServiceService(getServletContext());
             employeeService = new EmployeeService(getServletContext());

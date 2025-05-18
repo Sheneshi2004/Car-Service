@@ -31,7 +31,7 @@ public class BookingService {
                 file.createNewFile();
             }
         }
-    }
+    }//Add file creation method
 
     public String getFilePath(String fileName) {
         String relativePath = DATA_DIR + fileName;
@@ -42,7 +42,7 @@ public class BookingService {
             realPath = new File(fallbackDir, fileName).getPath();
         }
         return realPath;
-    } //Get file path method added
+    } //Add getFilePath method
 
     public void saveRecord(String action, String description) throws IOException {
         recordService.saveRecord(new Records(recordService.generateRecordId(), action, description, 

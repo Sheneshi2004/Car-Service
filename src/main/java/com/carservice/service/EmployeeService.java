@@ -22,7 +22,7 @@ public class EmployeeService {
     }
 
     public void createFileIfNotExist(String fileName) throws IOException {
-        String directoryPath = servletContext.getRealPath(DATA_DIR);
+        String directoryPath = servletContext.getRealPath(DATA_DIR);  //get actual file path for web application's data directory
         if (directoryPath != null) {
             File dataDir = new File(directoryPath);
             if (!dataDir.exists()) {

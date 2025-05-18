@@ -34,7 +34,7 @@ public class BookingServlet extends HttpServlet {
         List<Booking> bookings = bookingService.getBookingsByUser(username);
         request.setAttribute("bookings", bookings);
         request.getRequestDispatcher("user_records.jsp").forward(request, response);
-    }
+    } //Add doGet to show user bookings
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");

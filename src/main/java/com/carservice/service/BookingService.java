@@ -31,7 +31,7 @@ public class BookingService {
                 file.createNewFile();
             }
         }
-    }
+    }//Add file creation method
 
     public String getFilePath(String fileName) {
         String relativePath = DATA_DIR + fileName;

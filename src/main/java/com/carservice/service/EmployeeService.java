@@ -26,9 +26,9 @@ public class EmployeeService {
         if (directoryPath != null) {
             File dataDir = new File(directoryPath); //new file object representing data directory
             if (!dataDir.exists()) {
-                dataDir.mkdirs(); //if file not exist create it 
+                dataDir.mkdirs(); //if file not exist create it
             }
-            File file = new File(dataDir, fileName);
+            File file = new File(dataDir, fileName); //combines data directory with file name
             if (!file.exists()) {
                 file.createNewFile();
             }

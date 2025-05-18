@@ -48,7 +48,7 @@ public class BookingFormServlet extends HttpServlet {
             response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Unable to load services. Please try again later.");
             // Or forward to a dedicated error JSP:
             // request.setAttribute("errorMessage", "Unable to load services.");
-            
+
         }
     }
 }

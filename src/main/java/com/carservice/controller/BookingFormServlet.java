@@ -42,7 +42,7 @@ public class BookingFormServlet extends HttpServlet {
             // Forward the request to the booking form JSP
             request.getRequestDispatcher("/booking_form.jsp").forward(request, response);
         } catch (IOException e) {
-            
+            //Log the error and potentially shown an error page
             System.err.println("Error fetching services for booking form: " + e.getMessage());
             // Forward to an error page or show a generic error message
             response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Unable to load services. Please try again later.");

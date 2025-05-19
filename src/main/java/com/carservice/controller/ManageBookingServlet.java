@@ -31,5 +31,5 @@ public class ManageBookingServlet extends HttpServlet {
             System.err.println("Error fetching all bookings: " + e.getMessage());
             response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Unable to load bookings.");
         }
-    }//Load all bookings and forward to manage page
+    }
 }

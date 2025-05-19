@@ -52,7 +52,7 @@ public class BookingServlet extends HttpServlet {
 
         if ("book".equals(action)) {
             String serviceName = request.getParameter("serviceName");
-            String employeeId = request.getParameter("employeeId"); // Get employee ID
+            String employeeId = request.getParameter("employeeId");
             String date = request.getParameter("date");
             String time = request.getParameter("time");
             String vehicleNumber = request.getParameter("vehicleNumber");

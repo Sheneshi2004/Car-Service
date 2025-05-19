@@ -47,7 +47,7 @@ public class BookingServlet extends HttpServlet {
             return; // Stop processing
         }
 
-        User user = (User) session.getAttribute("user"); // Get User object
+        User user = (User) session.getAttribute("user");
         String username = user.getUsername(); // Get username from User object
 
         if ("book".equals(action)) {

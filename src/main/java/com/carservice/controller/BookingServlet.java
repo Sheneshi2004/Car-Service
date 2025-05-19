@@ -56,7 +56,7 @@ public class BookingServlet extends HttpServlet {
             String date = request.getParameter("date");
             String time = request.getParameter("time");
             String vehicleNumber = request.getParameter("vehicleNumber");
-            String status = "Pending";
+            String status = "Pending";//Add form data handling for booking
             
             // Use retrieved employeeId (handle empty string if none selected)
             Booking booking = new Booking(bookingService.generateBookingId(), username, serviceName, employeeId != null ? employeeId : "", date, time, vehicleNumber, status);

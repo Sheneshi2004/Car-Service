@@ -237,7 +237,7 @@
         <div class="nav-links">
             <a href="index.jsp">Home</a>
             <a href="user_dashboard.jsp">Dashboard</a>
-            <a href="user_records.jsp">My Records</a>
+            <a href="user_dashboard.jsp">My Records</a>
             <a href="review_form.jsp">Write Review</a>
         </div>
         <a href="login.jsp">Logout</a>

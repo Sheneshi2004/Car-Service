@@ -679,7 +679,7 @@
     <div class="nav-links">
         <a href="index.jsp">Home</a>
         <a href="user_dashboard.jsp">Dashboard</a>
-        <a href="user_records.jsp">My Records</a>
+        <a href="user_dashboard.jsp">My Records</a>
         <a href="booking_form.jsp">Book Service</a>
         <a href="review?action=viewAll">Reviews</a>
         <% User user = (User) session.getAttribute("user"); %>

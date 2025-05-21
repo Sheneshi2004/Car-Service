@@ -209,8 +209,9 @@
         <div class="nav-links">
             <a href="index.jsp">Home</a>
             <a href="manage_records.jsp">Service Records</a>
-            <a href="manage_users.jsp">Manage Users</a>
             <a href="manage_services.jsp">Manage Services</a>
+            <a href="manage_booking.jsp">Manage Bookings</a>
+            <a href="manage_employees.jsp">Manage Employees</a>
         </div>
         <a href="login.jsp">Logout</a>
         <% User admin = (User) session.getAttribute("user"); %>
@@ -240,20 +241,6 @@
                 <div class="card-stats">
                     <i class="fas fa-arrow-right"></i>
                     <span>View Records</span>
-                </div>
-            </a>
-
-            <a href="manage_users.jsp" class="dashboard-card">
-                <div class="card-header">
-                    <div class="card-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3 class="card-title">Manage Users</h3>
-                </div>
-                <p class="card-description">Add, edit, or remove user accounts and manage permissions</p>
-                <div class="card-stats">
-                    <i class="fas fa-arrow-right"></i>
-                    <span>Manage Users</span>
                 </div>
             </a>
 

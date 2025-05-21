@@ -62,7 +62,7 @@ public class UserServlet extends HttpServlet {
                 if (password != null && !password.trim().isEmpty()) {
                     existingUser.setPassword(password);
                 }
-                
+
                 userService.updateUser(existingUser);
                 response.sendRedirect(callingPage + "?success=User+" + username + "+updated+successfully");
 

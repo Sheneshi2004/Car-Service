@@ -1,0 +1,2 @@
+admin,admin123,admin
+soeshcooray@gmail.com,Soesh@123,customer

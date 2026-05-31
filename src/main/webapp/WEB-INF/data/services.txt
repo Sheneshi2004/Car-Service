@@ -1,0 +1,5 @@
+Oil Change,45.0,Replace engine oil and filter,Basic Maintenance
+Wheel Alignment,60.0,Adjust wheel angles for smoother driving,Maintenance
+Brake Inspection,35.0,Inspect brake pads and brake fluid,Safety Check
+Car Wash & Vacuum,25.0,Exterior wash and interior vacuum,Detailing
+Full Service,150.0,Complete inspection with multi-point checks,Comprehensive

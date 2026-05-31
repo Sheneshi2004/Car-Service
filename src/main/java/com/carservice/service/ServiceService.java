@@ -1,10 +1,21 @@
 package com.carservice.service;
 
-import com.carservice.model.Service;
-import jakarta.servlet.ServletContext;
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.carservice.model.Service;
+
+import jakarta.servlet.ServletContext;
 
 public class ServiceService {
     private static final String SERVICES_FILE = "services.txt";
@@ -45,6 +56,27 @@ public class ServiceService {
         return realPath;
     }
 
+    private File getSourceDataFile(String fileName) {
+        return new File("src/main/webapp/WEB-INF/data", fileName);
+    }
+
+    private void copySourceDataIfNeeded(File targetFile, File sourceFile) throws IOException {
+        if ((targetFile.exists() && targetFile.length() > 0) || !sourceFile.exists() || sourceFile.length() == 0) {
+            return;
+        }
+
+        File parent = targetFile.getParentFile();
+        if (parent != null && !parent.exists()) {
+            parent.mkdirs();
+        }
+
+        try (InputStream inputStream = new FileInputStream(sourceFile);
+             OutputStream outputStream = new FileOutputStream(targetFile)) {
+            inputStream.transferTo(outputStream);
+        }
+        System.out.println("ServiceService: Seeded runtime data from source file " + sourceFile.getAbsolutePath());
+    }
+
     private void saveRecord(String action, String description) {
         try {
             String logFile = getFilePath("service_log.txt");
@@ -67,6 +99,7 @@ public class ServiceService {
     public List<Service> getAllServices() throws IOException {
         List<Service> services = new ArrayList<>();
         File file = new File(getFilePath(SERVICES_FILE));
+        copySourceDataIfNeeded(file, getSourceDataFile(SERVICES_FILE));
         System.out.println("ServiceService: Reading services from: " + file.getAbsolutePath());
         
         if (!file.exists() || file.length() == 0) {

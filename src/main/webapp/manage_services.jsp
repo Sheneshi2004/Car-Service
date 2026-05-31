@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="com.carservice.model.Service" %>
 <%@ page import="com.carservice.model.User" %>
+<%@ page import="com.carservice.service.ServiceService" %>
 <%@ page import="java.util.List" %>
 <html>
 <head>
@@ -410,7 +411,17 @@
             <a href="service?sortBy=category">Sort by Category</a> 
         </div>
 
-        <% List<Service> services = (List<Service>) request.getAttribute("services"); %>
+        <%
+            List<Service> services = (List<Service>) request.getAttribute("services");
+            if (services == null) {
+                try {
+                    services = new ServiceService(application).getAllServices();
+                } catch (Exception e) {
+                    services = java.util.Collections.emptyList();
+                    request.setAttribute("error", "Failed to load services: " + e.getMessage());
+                }
+            }
+        %>
         <% if (services != null && !services.isEmpty()) { %>
         <table class="content-table">
             <thead>

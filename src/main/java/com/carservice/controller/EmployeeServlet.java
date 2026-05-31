@@ -1,13 +1,15 @@
 package com.carservice.controller;
 
-import com.carservice.service.EmployeeService; //For employee operations
-import com.carservice.model.Employee; //Employee model class
-import jakarta.servlet.ServletException; //servlet errors
-import jakarta.servlet.http.HttpServlet; //Base servlet class
-import jakarta.servlet.http.HttpServletRequest; //To handle HTTP requests
-import jakarta.servlet.http.HttpServletResponse; //To handle HTTP responses
-import java.io.IOException; //For I/O operations
-import java.util.List;//To store employee lists
+import java.io.IOException; //For employee operations
+import java.util.List; //Employee model class
+
+import com.carservice.model.Employee; //servlet errors
+import com.carservice.service.EmployeeService; //Base servlet class
+
+import jakarta.servlet.ServletException; //To handle HTTP requests
+import jakarta.servlet.http.HttpServlet; //To handle HTTP responses
+import jakarta.servlet.http.HttpServletRequest; //For I/O operations
+import jakarta.servlet.http.HttpServletResponse;//To store employee lists
 
 //class declaration-extends HttpServlet to create EmployeeServlet
 public class EmployeeServlet extends HttpServlet {
@@ -26,6 +28,7 @@ public class EmployeeServlet extends HttpServlet {
     }
 
     //To handle HTTP get requests
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //Get list of all employees from service
         List<Employee> employees = employeeService.getAllEmployees();
@@ -36,6 +39,7 @@ public class EmployeeServlet extends HttpServlet {
     }
 
     //To handle HTTP Post requests
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //get action parameter from requests
         String action = request.getParameter("action");
@@ -44,6 +48,10 @@ public class EmployeeServlet extends HttpServlet {
             String employeeId = request.getParameter("employeeId");
             String name = request.getParameter("name");
             String specialization = request.getParameter("specialization");
+
+            if (employeeId == null || employeeId.trim().isEmpty()) {
+                employeeId = employeeService.generateEmployeeId();
+            }
 
             //New employee object with parameters
             Employee employee = new Employee(employeeId, name, specialization);

@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="com.carservice.model.Employee" %>
+<%@ page import="com.carservice.service.EmployeeService" %>
 <%@ page import="java.util.List" %>
 <%@ page import="com.carservice.model.User" %>
 <html>
@@ -301,7 +302,17 @@
             <input type="submit" value="Add Employee" class="form-submit-button">
         </form>
 
-        <% List<Employee> employees = (List<Employee>) request.getAttribute("employees"); %>
+        <%
+            List<Employee> employees = (List<Employee>) request.getAttribute("employees");
+            if (employees == null) {
+                try {
+                    employees = new EmployeeService(application).getAllEmployees();
+                } catch (Exception e) {
+                    employees = java.util.Collections.emptyList();
+                    request.setAttribute("error", "Failed to load employees: " + e.getMessage());
+                }
+            }
+        %>
         <% if (employees != null && !employees.isEmpty()) { %>
         <h2>Current Employees</h2>
         <table class="employees-table">

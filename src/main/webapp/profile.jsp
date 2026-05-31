@@ -239,9 +239,9 @@
                 <div class="info-value"><%= user != null ? user.getUsername() : "" %></div>
             </div>
             <div class="info-group">
-                <div class="info-label">Email</div>
-                <div class="info-value"><%= user != null ? user.getEmail() : "" %></div>
-            </div>
+                    <div class="info-label">Email</div>
+                    <div class="info-value"><%= "" %></div>
+                </div>
         </div>
 
         <form class="profile-form" action="user" method="post">
@@ -250,7 +250,7 @@
             
             <div class="form-group">
                 <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" value="<%= user != null ? user.getEmail() : "" %>" required>
+                <input type="email" id="email" name="email" value="" placeholder="(not set)">
             </div>
 
             <div class="form-group">
